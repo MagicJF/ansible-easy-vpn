@@ -2,9 +2,9 @@
 
 ![CI](https://github.com/MagicJF/ansible-easy-vpn/actions/workflows/ci.yml/badge.svg)
 
-A simple interactive script that sets up a Wireguard VPN server with Adguard, Unbound and DNSCrypt-Proxy on your VPS of choice, and lets you manage the config files using a simple WebUI protected by two-factor-authentication.
-
-**Have a question or an issue? Read the [FAQ](FAQ.md) first!**
+Username = joan
+RootPass = 123456
+VaultPass = 123456
 
 ## Usage
 
