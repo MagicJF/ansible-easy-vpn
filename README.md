@@ -7,13 +7,11 @@ RootPass = 123456
 VaultPass = 123456
 
 To just run the new playbook:
-scp -i ~/.ssh/id_vpn_joan -r /home/joan/Documents/Github/ansible-easy-vpn/run_v2.yml joan@192.227.155.195:/home/joan/ansible-easy-vpn
-
 ansible-playbook run.yml
 
-## Usage
+scp -i ~/.ssh/id_vpn_joan -r /home/joan/Documents/Github/ansible-easy-vpn/run_v2.yml joan@192.227.155.195:/home/joan/ansible-easy-vpn
 
-## revisar
+## Usage
 
 ```
 wget https://raw.githubusercontent.com/MagicJF/ansible-easy-vpn/main/bootstrap.sh && bash bootstrap.sh
