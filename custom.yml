@@ -1,0 +1,9 @@
+username: 'joan'
+root_host: 'iggor.duckdns.org'
+dns_nameservers: 'cloudflare'
+enable_ssh_keygen: true
+email: 'joanfornco@gmail.com'
+email_recipient: 'joanfornco@gmail.com'
+email_smtp_host: 'email-smtp.us-east-1.amazonaws.com'
+email_smtp_port: '465'
+email_login: 'AKIAQWA5JR2XDLF6APH5'
