@@ -16,9 +16,9 @@
         letsencrypt_staging: "{{ [lookup('ansible.builtin.env', 'LETSENCRYPT_STAGING') | lower | default('no')] }}"
 
   roles:
-    - role: dinamic-site
+    - role: petra
       tags:
-        - dinamic-site
+        - petra
 
     # - role: docker
     #   tags:

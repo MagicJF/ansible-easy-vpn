@@ -30,7 +30,7 @@ access_control:
       policy: bypass
     - domain: {{ wireguard_host }}
       policy: two_factor
-    - domain: {{ dinamic-site_host }}
+    - domain: {{ petra_host }}
       policy: two_factor
 {% if enable_adguard_unbound_doh %}
     - domain: {{ adguard_host }}

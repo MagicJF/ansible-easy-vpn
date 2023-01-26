@@ -1,10 +1,10 @@
 ---
-- name: Make sure the dinamic-site container is created and running
+- name: Make sure the petra container is created and running
   community.docker.docker_container:
-    name: dinamic-site
+    name: petra
     image: prakhar1989/static-site
     networks:
-      - name: dinamic-site
+      - name: petra
         ipv4_address: 10.8.2.6
     state: 'started'
     restart_policy: unless-stopped
