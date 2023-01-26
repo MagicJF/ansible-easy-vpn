@@ -4,8 +4,6 @@
 REQUIRED_PACKAGES=()
 REQUIRED_PACKAGES_ARM64=()
 
-#oliii
-
 # Discard stdin. Needed when running from an one-liner which includes a newline
 read -N 999999 -t 0.001
 

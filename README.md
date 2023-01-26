@@ -6,6 +6,9 @@ Username = joan
 RootPass = 123456
 VaultPass = 123456
 
+To just run the new playbook:
+ansible-playbook run.yml
+
 ## Usage
 
 ## revisar
