@@ -1,0 +1,27 @@
+---
+- name: Copy the docker folder to {{ docker_dir }}
+  ansible.posix.synchronize:
+    src: '{{ role_path }}/files/static-site/'
+    dest: '{{ docker_dir }}/static-site-doh/build/'
+    recursive: yes
+    rsync_opts:
+      - '--ignore-existing'
+
+- name: Template the dnscrypt-proxy config
+  ansible.builtin.template:
+    src: dnscrypt-proxy.toml.j2
+    dest: '{{ docker_dir }}/static-site/dnscrypt-proxy/dnscrypt-proxy.toml'
+    owner: '{{ username }}'
+    group: '{{ username }}'
+    mode: 0644
+  notify: Restart static-site
+
+- name: Make sure the static-site container is created and running
+  community.docker.docker_container:
+    name: static-site
+    image: prakhar1989/static-site
+    networks:
+      - name: static-site
+        ipv4_address: 10.8.2.2
+    state: 'started'
+    restart_policy: unless-stopped

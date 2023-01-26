@@ -31,6 +31,8 @@ all:
 
     adguard_host: 'adguard.{{ root_host }}'
 
+    static-site: 'static-site.{{ root_host }}'
+
     wireguard_port: '51820'
 
     # Possible choices: cloudflare, quad9, google
@@ -51,7 +53,7 @@ all:
     # https://docs.oracle.com/cd/E23824_01/html/E26033/glset.html
     locale: en_US.UTF-8
 
-    timezone: Europe/Berlin
+    timezone: Europe/Madrid
 
     # Set the time at which the system should reboot after installing updates (24H format)
     autoupdate_reboot_time: 03:00
