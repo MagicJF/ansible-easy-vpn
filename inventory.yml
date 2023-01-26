@@ -31,7 +31,7 @@ all:
 
     adguard_host: 'adguard.{{ root_host }}'
 
-    static-site: 'static-site.{{ root_host }}'
+    static-site_host: 'static-site.{{ root_host }}'
 
     wireguard_port: '51820'
 
