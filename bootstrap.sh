@@ -327,31 +327,31 @@ fi
 
 
 # Set secure permissions for the Vault file
-touch $HOME/ansible-easy-vpn/secret.yml
-chmod 600 $HOME/ansible-easy-vpn/secret.yml
+# touch $HOME/ansible-easy-vpn/secret.yml
+# chmod 600 $HOME/ansible-easy-vpn/secret.yml
 
-if [ -z ${email_password+x} ]; then
-  echo
-else 
-  echo "email_password: \"${email_password}\"" >> $HOME/ansible-easy-vpn/secret.yml
-fi
+# if [ -z ${email_password+x} ]; then
+#   echo
+# else 
+#   echo "email_password: \"${email_password}\"" >> $HOME/ansible-easy-vpn/secret.yml
+# fi
 
-echo "user_password: \"${user_password}\"" >> $HOME/ansible-easy-vpn/secret.yml
+# echo "user_password: \"${user_password}\"" >> $HOME/ansible-easy-vpn/secret.yml
 
-jwt_secret=$(openssl rand -hex 23)
-session_secret=$(openssl rand -hex 23)
-storage_encryption_key=$(openssl rand -hex 23)
+# jwt_secret=$(openssl rand -hex 23)
+# session_secret=$(openssl rand -hex 23)
+# storage_encryption_key=$(openssl rand -hex 23)
 
-echo "jwt_secret: ${jwt_secret}" >> $HOME/ansible-easy-vpn/secret.yml
-echo "session_secret: ${session_secret}" >> $HOME/ansible-easy-vpn/secret.yml
-echo "storage_encryption_key: ${storage_encryption_key}" >> $HOME/ansible-easy-vpn/secret.yml
+# echo "jwt_secret: ${jwt_secret}" >> $HOME/ansible-easy-vpn/secret.yml
+# echo "session_secret: ${session_secret}" >> $HOME/ansible-easy-vpn/secret.yml
+# echo "storage_encryption_key: ${storage_encryption_key}" >> $HOME/ansible-easy-vpn/secret.yml
 
-echo
-echo "Encrypting the variables"
-ansible-vault encrypt $HOME/ansible-easy-vpn/secret.yml
+# echo
+# echo "Encrypting the variables"
+# ansible-vault encrypt $HOME/ansible-easy-vpn/secret.yml
 
-echo
-echo "Success!"
+# echo
+# echo "Success!"
 read -p "Would you like to run the playbook now? [y/N]: " launch_playbook
 until [[ "$launch_playbook" =~ ^[yYnN]*$ ]]; do
 				echo "$launch_playbook: invalid selection."
