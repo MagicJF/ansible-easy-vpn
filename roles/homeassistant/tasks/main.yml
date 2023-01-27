@@ -1,0 +1,53 @@
+---
+- name: HA_Dependency apt-get
+  ansible.builtin.package:
+    name: apt-get
+    state: present
+- name: HA_Dependency apparmor
+  ansible.builtin.package:
+    name: apparmor
+    state: present
+- name: HA_Dependency jq
+  ansible.builtin.package:
+    name: jq
+    state: present
+- name: HA_Dependency wget
+  ansible.builtin.package:
+    name: wget
+    state: present
+- name: HA_Dependency curl
+  ansible.builtin.package:
+    name: curl
+    state: present
+- name: HA_Dependency udisks2
+  ansible.builtin.package:
+    name: udisks2
+    state: present
+- name: HA_Dependency libglib2.0-bin
+  ansible.builtin.package:
+    name: libglib2.0-bin
+    state: present
+- name: HA_Dependency network-manager
+  ansible.builtin.package:
+    name: network-manager
+    state: present
+- name: HA_Dependency dbus
+  ansible.builtin.package:
+    name: dbus
+    state: present
+- name: HA_Dependency lsb-release
+  ansible.builtin.package:
+    name: lsb-release
+    state: present
+- name: HA_Dependency systemd-journal-remote
+  ansible.builtin.package:
+    name: systemd-journal-remote
+    state: present
+
+- name: Install HA_Dependency OS Agent
+  ansible.builtin.apt:
+    deb: https://github.com/home-assistant/os-agent/releases/download/1.4.1/os-agent_1.4.1_linux_x86_64.deb
+
+- name: Install HA Supervised
+  ansible.builtin.apt:
+    deb: https://github.com/home-assistant/supervised-installer/releases/latest/download/homeassistant-supervised.deb

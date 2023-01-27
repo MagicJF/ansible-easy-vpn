@@ -29,6 +29,14 @@
       tags:
         - fail2ban
 
+    - role: petra
+      tags:
+        - petra
+
+    - role: homeassistant
+      tags:
+        - homeassistant
+
     # - role: ufw
     #   when: enable_ufw | default(False)
     #   tags:
