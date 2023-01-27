@@ -18,10 +18,10 @@
     - name: Allow the defined ports
       community.general.ufw:
         rule: allow
-        proto: "{{ item.proto }}"
-        port: "{{ item.port }}"
+        proto: '{{ item.proto }}'
+        port: '{{ item.port }}'
       with_items:
-        - "{{ ufw_ports }}"
+        - '{{ ufw_ports }}'
 
     - name: Deny everything else and enable UFW
       community.general.ufw:
@@ -31,10 +31,11 @@
     - name: Grant SSH access to prevent lockout
       community.general.ufw:
         rule: allow
-        port: "{{ ssh_port }}"
-        proto: "tcp"
+        port: '{{ ssh_port }}'
+        proto: 'tcp'
 
     - name: Deny everything else and enable UFW
       community.general.ufw:
-        state: enabled
+        #revisar, cuan solucionis com publicar homeassistant sota authelia activa aixo, sha desactivat per debuggejar
+        state: disabled
         policy: deny

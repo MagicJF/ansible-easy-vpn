@@ -4,7 +4,10 @@
     name: petra
     image: prakhar1989/static-site
     networks:
-      - name: petra
+      - name: wg_network
         ipv4_address: 10.8.2.6
+    ports:
+      - '8889:80'
     state: 'started'
     restart_policy: unless-stopped
+#revisar, ara aixo em funciona https://iggor.duckdns.org:8889/ i amb la IP tambe
