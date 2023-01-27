@@ -63,11 +63,3 @@
     - role: ssh
       tags:
         - ssh
-
-- hosts: all
-  become_user: root
-  become: true
-  roles:
-    - role: homeassistant
-      tags:
-        - homeassistant
