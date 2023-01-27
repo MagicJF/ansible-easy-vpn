@@ -29,27 +29,27 @@
       tags:
         - fail2ban
 
-    - role: ufw
-      when: enable_ufw | default(False)
-      tags:
-        - ufw
+    # - role: ufw
+    #   when: enable_ufw | default(False)
+    #   tags:
+    #     - ufw
 
-    - role: dns
-      when: enable_adguard_unbound_doh | default(False)
-      tags:
-        - dns
+    # - role: dns
+    #   when: enable_adguard_unbound_doh | default(False)
+    #   tags:
+    #     - dns
 
-    - role: authelia
-      tags:
-        - authelia
+    # - role: authelia
+    #   tags:
+    #     - authelia
 
-    - role: bunkerweb
-      tags:
-        - bunkerweb
+    # - role: bunkerweb
+    #   tags:
+    #     - bunkerweb
 
-    - role: wireguard
-      tags:
-        - wireguard
+    # - role: wireguard
+    #   tags:
+    #     - wireguard
 
     - role: chriswayg.msmtp-mailer
       when: email_password is defined
