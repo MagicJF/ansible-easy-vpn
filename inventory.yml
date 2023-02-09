@@ -65,7 +65,7 @@ all:
 
     # Optional e-mail for notifications (unattended upgrades, banned IPs, etc.)
     # Leave everything in place if you don't want any notifications
-    email_login: root@localhost
+    email_login: joanfornco@gmail.com
 
     email: '{{ email_login }}'
 
@@ -91,16 +91,17 @@ all:
 
     # By default, only access via the SSH port and 51820/udp is allowed
     # The rest of the ports are closed
-    enable_ufw: true
-    ufw_ports:
-      - port: '{{ wireguard_port }}'
-        proto: 'udp'
-      - port: '80'
-        proto: 'tcp'
-      - port: '443'
-        proto: 'tcp'
-      - port: '{{ ssh_port }}'
-        proto: 'tcp'
+
+    # enable_ufw: true
+    # ufw_ports:
+    #   - port: '{{ wireguard_port }}'
+    #     proto: 'udp'
+    #   - port: '80'
+    #     proto: 'tcp'
+    #   - port: '443'
+    #     proto: 'tcp'
+    #   - port: '{{ ssh_port }}'
+    #     proto: 'tcp'
 
     # Fail2Ban only comes with the SSH jail by default
     enable_fail2ban: true

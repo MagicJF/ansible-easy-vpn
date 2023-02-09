@@ -29,9 +29,9 @@
       tags:
         - fail2ban
 
-    - role: petra
-      tags:
-        - petra
+    # - role: petra
+    #   tags:
+    #     - petra
 
     # - role: ufw
     #   when: enable_ufw | default(False)

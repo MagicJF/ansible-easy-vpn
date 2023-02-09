@@ -6,7 +6,7 @@
 
 - name: Set arm64 arch
   ansible.builtin.set_fact:
-    repo_arch: "{{ ansible_architecture }}"
+    repo_arch: '{{ ansible_architecture }}'
   when: (ansible_architecture == "arm64") or (ansible_architecture == "aarch64")
 
 - name: Include OS-specific variables
@@ -15,7 +15,7 @@
 - name: Install required system packages
   ansible.builtin.package:
     state: present
-    name: "{{ docker_deps }}"
+    name: '{{ docker_deps }}'
 
 - name: Install Docker (Debian & Ubuntu)
   when: ansible_facts['os_family'] == 'Debian'
@@ -35,14 +35,14 @@
     - name: Attempt installation
       ansible.builtin.apt:
         update_cache: yes
-        name: "{{ docker_packages }}"
+        name: '{{ docker_packages }}'
         state: present
   rescue:
     - name: Fix the dumb Ubuntu Jammy error
       ansible.builtin.replace:
         path: /etc/systemd/system/multi-user.target.wants/docker.service
-        regexp: "fd://"
-        replace: "unix://"
+        regexp: 'fd://'
+        replace: 'unix://'
       when: ansible_distribution == 'Ubuntu' and ansible_distribution_version is version('22.04', '>=')
 
 - name: Ensure group docker exists
@@ -52,7 +52,7 @@
 
 - name: Add user "{{ username }}" to group docker
   ansible.builtin.user:
-    name: "{{ username }}"
+    name: '{{ username }}'
     groups:
       - docker
     append: yes
